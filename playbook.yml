@@ -1,0 +1,10 @@
+- hosts: localhost
+  vars_prompt:
+    - name: "pin"
+      prompt: "Enter SIM PIN"
+      private: yes
+  tasks:
+    - name: Set up autostart with jinja copy
+      template:
+        src: "mmcli-sim-auto-pin-unlock.desktop.j2"
+        dest: "{{ ansible_env.HOME }}/.config/autostart/mmcli-sim-auto-pin-unlock.desktop"

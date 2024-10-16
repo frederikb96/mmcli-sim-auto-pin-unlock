@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=timeout 60s /bin/bash -c 'sleep 5; while ! mmcli -L | grep -qie "Modem/"; do sleep 1; done; sleep 1; mmcli -i 0 --pin={{ pin }}'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=MMCLI Sim Auto Pin Unlock
+Comment=Unlock SIM card with mmcli
